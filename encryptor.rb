@@ -39,11 +39,15 @@ class Encryptor
     # 1. cut the string into letters
     letters = string.split("")
     # 2. encrypt those letters one at a time
-    results = []
-    letters.each do |letter|
-      encrypted_letter = encrypt_letter(letter)
-      results.push(encrypted_letter)
-    end
+    # results = []
+    # letters.each do |letter|
+    #   encrypted_letter = encrypt_letter(letter)
+    #   results.push(encrypted_letter)
+    # end
+    # REFACTORING
+    results = letter.collect do |l|
+                l.encrypt
+              end
     # 3. join the results back together in one string
     results.join()
   end
