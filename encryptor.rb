@@ -45,10 +45,19 @@ class Encryptor
     #   results.push(encrypted_letter)
     # end
     # REFACTORING
-    results = letter.collect do |l|
-                l.encrypt
+    results = letters.collect do |l|
+                encrypt_letter(l)
               end
     # 3. join the results back together in one string
     results.join()
+  end
+
+  def decrypt_letter(letter)
+    lowercase_letter = letter.downcase
+    encrypt_letter(lowercase_letter)
+  end
+
+  def decrypt(string)
+    encrypt(string)
   end
 end
